@@ -34,6 +34,12 @@ pipeline {
       }
     }
 
+    stage('Kill') {
+      steps {
+        sh './jenkins/scripts/kill.sh'
+      }
+    }
+
   }
   environment {
     npm_config_cache = 'npm-cache'
