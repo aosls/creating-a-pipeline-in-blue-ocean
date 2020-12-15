@@ -22,6 +22,18 @@ pipeline {
       }
     }
 
+    stage('Deliver') {
+      steps {
+        sh './jenkins/scripts/deliver.sh'
+      }
+    }
+
+    stage('') {
+      steps {
+        input 'Finished using the web site? (Click "Proceed" to continue)'
+      }
+    }
+
   }
   environment {
     npm_config_cache = 'npm-cache'
